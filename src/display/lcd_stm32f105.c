@@ -746,7 +746,7 @@ static void oled_convert_text_row_6x13(char *pc)
     q++;
 
     for (i = 0; i < lcd_columns; i++) {
-        if ((c = *pc++ - 0x20) > 0x5e)
+        if ((c = *pc++ - 0x20) > 0xd2)
             c = '.' - 0x20;
         p = &oled_font_6x13[c * w * 2];
         memcpy(q, p, w);
@@ -769,7 +769,7 @@ static void oled_convert_text_row_8x16(char *pc)
     const unsigned int w = 8;
 
     for (i = 0; i < lcd_columns; i++) {
-        if ((c = *pc++ - 0x20) > 0x5e)
+        if ((c = *pc++ - 0x20) > 0xd2)
             c = '.' - 0x20;
         p = &oled_font_8x16[c * w * 2];
         memcpy(q, p, w);
